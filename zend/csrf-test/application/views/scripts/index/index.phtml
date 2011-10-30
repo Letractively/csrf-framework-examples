@@ -1,0 +1,28 @@
+
+<p>Welcome!</p>
+
+<?php
+$auth = Zend_Auth::getInstance();
+if ($auth->hasIdentity()) { ?>
+
+<p>You are logged in as: <?php print_r($auth->getIdentity()); ?></p>
+<p><a href="/login/logout">Logout</a></p>
+
+<h1>Post status update:</h1>
+<?php print $this->form; ?>
+
+<?php
+} else {
+?>
+
+<p>You are not logged in. <a href="/login">Login</a></p>
+
+<?php
+}
+?>
+
+
+<h1>Recent status updates</h1>
+<pre>
+<?php print htmlentities($this->status); ?>
+</pre>

