@@ -1,0 +1,22 @@
+
+<h1>CSRF Test</h1>
+
+
+<h2>Recent status updates</h2>
+
+<ol>
+{% for entry in status %}
+	<li>{{ entry.author }}: {{ entry.status }}</li>
+{% else %}
+	<li>No status updates yet.</li>
+{% endfor %}
+</ol>
+
+
+<h2>Update your status</h2>
+
+<form action="{{ path('CSRFTestSampleBundle_create') }}" method="post" {{ form_enctype(form) }}>
+{{ form_widget(form) }}
+
+<input type="submit" />
+</form>

@@ -1,0 +1,7 @@
+parameters:
+#    csrf_test_sample.example.class: CSRFTest\SampleBundle\Example
+
+services:
+#    csrf_test_sample.example:
+#        class: %csrf_test_sample.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

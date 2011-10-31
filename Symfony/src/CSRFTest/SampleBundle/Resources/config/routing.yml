@@ -1,0 +1,7 @@
+CSRFTestSampleBundle_homepage:
+    pattern:  /
+    defaults: { _controller: CSRFTestSampleBundle:Default:index }
+
+CSRFTestSampleBundle_create:
+    pattern:  /create
+    defaults: { _controller: CSRFTestSampleBundle:Default:create }
