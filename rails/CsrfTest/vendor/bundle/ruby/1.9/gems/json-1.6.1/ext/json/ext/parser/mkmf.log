@@ -1,0 +1,33 @@
+have_header: checking for re.h... -------------------- no
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I.    -I/usr/local/include -O3 -pipe -O3 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic     -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"cpp -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I.    -I/usr/local/include -O3 -pipe -O3 -fno-strict-aliasing -pipe -march=native  -fPIC  conftest.c -o conftest.i"
+conftest.c:3:16: error: re.h: No such file or directory
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <re.h>
+/* end */
+
+--------------------
+
+have_header: checking for ruby/st.h... -------------------- yes
+
+"cpp -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I.    -I/usr/local/include -O3 -pipe -O3 -fno-strict-aliasing -pipe -march=native  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/st.h>
+/* end */
+
+--------------------
+

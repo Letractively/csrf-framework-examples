@@ -1,0 +1,38 @@
+
+<h1>What are you doing?</h1>
+
+<% if logged_in? %>
+
+  <p><%= link_to 'Logout', user_session_path, :method => :delete %></p>
+
+  <%= form_for @status_update do |f| %>
+    <p>Author: <%= session[:user_name] %></p>
+    <p>
+      <%= f.label :status, 'What are you doing now?' %>
+      <%= f.text_field :status %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+
+<% else %>
+
+  <p>Please log in first:</p>
+  <%= form_tag user_session_path, :method => :post do %>
+    <p>Your name: <%= text_field_tag :user_name %>
+    <%= submit_tag "Login" %></p>
+  <% end %>
+
+<% end %>
+
+
+<h1>Recent status updates</h1>
+
+<% if @messages.any? %>
+  <ol>
+  <% for message in @messages %>
+    <li><%= message.author %>: <%= message.status %></li>
+  <% end %>
+  </ol>
+<% else %>
+  <p>No status messages yet.</p>
+<% end %>

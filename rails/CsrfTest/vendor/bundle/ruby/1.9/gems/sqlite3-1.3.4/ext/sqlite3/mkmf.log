@@ -1,0 +1,206 @@
+find_header: checking for sqlite3.h... -------------------- yes
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic     -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"cpp -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sqlite3.h>
+/* end */
+
+--------------------
+
+find_library: checking for sqlite3_libversion_number() in -lsqlite3... -------------------- yes
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic     -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+conftest.c: In function 't':
+conftest.c:5: error: 'sqlite3_libversion_number' undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_libversion_number; return 0; }
+/* end */
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic     -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { sqlite3_libversion_number(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_proc_arity()... -------------------- yes
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rb_proc_arity; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_initialize()... -------------------- yes
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+conftest.c: In function 't':
+conftest.c:5: error: 'sqlite3_initialize' undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_initialize; return 0; }
+/* end */
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { sqlite3_initialize(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_backup_init()... -------------------- yes
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+conftest.c: In function 't':
+conftest.c:5: error: 'sqlite3_backup_init' undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_backup_init; return 0; }
+/* end */
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { sqlite3_backup_init(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_column_database_name()... -------------------- yes
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+conftest.c: In function 't':
+conftest.c:5: error: 'sqlite3_column_database_name' undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_column_database_name; return 0; }
+/* end */
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { sqlite3_column_database_name(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_enable_load_extension()... -------------------- no
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+conftest.c: In function 't':
+conftest.c:5: error: 'sqlite3_enable_load_extension' undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_enable_load_extension; return 0; }
+/* end */
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+/var/tmp//cclGjQrk.o(.text+0x17): In function `t':
+: undefined reference to `sqlite3_enable_load_extension'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { sqlite3_enable_load_extension(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for sqlite3_load_extension()... -------------------- no
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+conftest.c: In function 't':
+conftest.c:5: error: 'sqlite3_load_extension' undeclared (first use in this function)
+conftest.c:5: error: (Each undeclared identifier is reported only once
+conftest.c:5: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))sqlite3_load_extension; return 0; }
+/* end */
+
+"cc -o conftest -I/usr/local/include/ruby-1.9//amd64-freebsd8 -I/usr/local/include/ruby-1.9//ruby/backward -I/usr/local/include/ruby-1.9/ -I. -I/usr/local/include    -I/usr/local/include -O2 -pipe -O2 -fno-strict-aliasing -pipe -march=native  -fPIC conftest.c  -L. -L/usr/local/lib -Wl,-R/usr/local/lib -L/usr/local/lib -Wl,-R/usr/local/lib -L.  -rdynamic    -lsqlite3  -Wl,-R -Wl,/usr/local/lib -L/usr/local/lib -lruby19-static -lsqlite3  -lcrypt -lm -L/usr/local/lib  -rpath=/usr/lib:/usr/local/lib -pthread  -lc"
+/var/tmp//cc2ISOTf.o(.text+0x17): In function `t':
+: undefined reference to `sqlite3_load_extension'
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { sqlite3_load_extension(); return 0; }
+/* end */
+
+--------------------
+
