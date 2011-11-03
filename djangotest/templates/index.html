@@ -1,0 +1,18 @@
+
+<h1>What are you doing now?</h1>
+
+<form action="/update" method="post">
+	{% csrf_token %}
+	<p>Your name: <input name="author"/></p>
+	<p>Status: <input name="status"/></p>
+	<p><input type="submit"/></p>
+</form>
+
+
+<h1>Recent status updates</h1>
+
+<ol>
+{% for entry in status %}
+	<li>{{ entry }}</li>
+{% endfor %}
+</ol>
